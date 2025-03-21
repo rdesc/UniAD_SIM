@@ -469,7 +469,8 @@ model = dict(
     ),
 )
 dataset_type = "NuScenesE2EDataset"
-data_root = "/data2/datasets/nuScenes/raw/Trainval"
+import os
+data_root = os.getenv("NUPLAN_DATA_ROOT")
 info_root = "data/infos/"
 file_client_args = dict(backend="disk")
 ann_file_train=info_root + f"nuscenes_infos_temporal_train.pkl"
